@@ -6,4 +6,4 @@ version=0.1
 qgisMinimumVersion=3.0
 author=Enrique Sierra
 email=esierra@gijon.es
-repository=http://github.io
+repository=https://github.com/esierraGijon/qgisActiveLayer
