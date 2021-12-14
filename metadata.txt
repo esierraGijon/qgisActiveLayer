@@ -2,7 +2,7 @@
 name=CapaActiva
 description=Aviso de activación/desactivación de edición
 about=Muestra un mensaje cuando se active o desactive la edición de la capa activa
-version=0.1
+version=0.2
 qgisMinimumVersion=3.0
 author=Enrique Sierra
 email=esierra@gijon.es
