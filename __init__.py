@@ -1,5 +1,5 @@
 # -----------------------------------------------------------
-# Copyright (C) 2015 Martin Dobias
+# Copyright (C) 2021 Enrique Sierra
 # -----------------------------------------------------------
 # Licensed under the terms of GNU GPL 2
 #
@@ -12,15 +12,15 @@
 from PyQt5.QtWidgets import QAction, QMessageBox
 
 def classFactory(iface):
-    return MinimalPlugin(iface)
+    return QgisActiveLayer(iface)
 
-class MinimalPlugin:
+class QgisActiveLayer:
     def __init__(self, iface):
         self.iface = iface
         self.nombre = self.iface.activeLayer().name()
 
     def initGui(self):
-        self.action = QAction('Go!', self.iface.mainWindow())
+        self.action = QAction('Capactiva', self.iface.mainWindow())
         self.action.triggered.connect(self.run)
         self.iface.addToolBarIcon(self.action)
 
@@ -33,7 +33,7 @@ class MinimalPlugin:
         self.iface.activeLayer().editingStopped.connect(self.finEdicion)
 
     def inicioEdicion(self):
-        QMessageBox.information(None, 'Minimal plugin', 'Comienza la edición de la capa ' + self.nombre)
+        QMessageBox.information(None, 'Capa activa', 'Comienza la edición de la capa ' + self.nombre)
 
     def finEdicion(self):
-        QMessageBox.information(None, 'Minimal plugin', 'Finaliza la edición de la capa ' + self.nombre)
+        QMessageBox.information(None, 'Capa activa', 'Finaliza la edición de la capa ' + self.nombre)
